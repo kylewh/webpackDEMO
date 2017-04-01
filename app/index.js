@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import foo from './foo'
 
 var component = () => {
   var element = $('<div></div>')
@@ -7,3 +8,7 @@ var component = () => {
 }
 
 $('body').append(component())
+
+console.log(foo)
+
+console.log(foo())
