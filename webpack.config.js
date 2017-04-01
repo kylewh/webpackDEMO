@@ -1,4 +1,5 @@
 var path = require('path')
+var webpack = require('webpack')
 
 module.exports = {
   entry: './app/index.js',
@@ -8,8 +9,17 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $: jquery,
-      jQuery: jquery
+      $: 'jquery',
+      jQuery: 'jquery'
     })
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: path.resolve(__dirname, 'js'),
+        loader: 'babel-loader'
+      }
+    ]
+  }
 }

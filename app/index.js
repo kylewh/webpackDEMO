@@ -1,9 +1,9 @@
 import _ from 'lodash'
 
-function component () {
-  var element = document.createElement('div')
-  element.innerHTML = _.join(['Hello', 'Webpack'], ' ')
+var component = () => {
+  var element = $('<div></div>')
+  element.html(_.join(['Hello', 'Webpack'], ' '))
   return element
 }
 
-document.body.appendChild(component())
+$('body').append(component())
